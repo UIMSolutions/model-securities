@@ -1,0 +1,15 @@
+.dub
+docs.json
+__dummy.html
+docs/
+/model-security
+model-security.so
+model-security.dylib
+model-security.dll
+model-security.a
+model-security.lib
+model-security-test-*
+*.exe
+*.o
+*.obj
+*.lst
