@@ -1,4 +1,4 @@
-module Id": UUIDAttribute.entities.security.privileges.privilege;
+module models.securities.entities.security.privileges.privilege;
 
 @safe:
 import models.administrations;

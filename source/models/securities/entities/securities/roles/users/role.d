@@ -4,8 +4,8 @@ module models.administrations.entities.security.roles.role;
 import models.administrations;
 
 // 
-class DSecurityRoleEntity : DOOPEntity {
-  mixin(EntityThis!("SecurityRoleEntity"));
+class DSecurityUserRoleEntity : DOOPEntity {
+  mixin(EntityThis!("SecurityUserRoleEntity"));
 
   override void initialize() {
     super.initialize;
@@ -16,18 +16,21 @@ class DSecurityRoleEntity : DOOPEntity {
         "securityRoleName": StringAttribute, // 
         "accessToSensitiveData": StringAttribute, // 
         "userLicenseType": StringAttribute, // 
-        "contextString": StringAttribute, // 
+        "assignmentMode":		StringAttribute, //
+        "assignmentStatus":		StringAttribute, //
+        "securityRole":		StringAttribute, //
+        "userId": StringAttribute, //
       ])
-      .registerPath("admin_securityroles");
+      .registerPath("security_userroles");
   }
 }
-mixin(EntityCalls!("SecurityRoleEntity"));
+mixin(EntityCalls!("SecurityUserRoleEntity"));
 
 version(test_library) {
   unittest {
-    assert(SecurityRoleEntity);
+    assert(SecurityUserRoleEntity);
   
-  auto entity = SecurityRoleEntity;
+  auto entity = SecurityUserRoleEntity;
   // auto repository = OOPFileRepository("./tests");
 /*  repository.create("entities", entity.entityClasses, entity.toJson);
 

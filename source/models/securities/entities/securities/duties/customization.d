@@ -1,4 +1,4 @@
-module source.Id": UUIDAttribute.entities.security.duties.customization;
+module models.securities.entities.security.duties.customization;
 
 @safe:
 import models.administrations;

@@ -1,2 +1,2 @@
-module Id": UUIDAttribute.entities.security.duties;
+module models.securities.entities.security.duties;
 
