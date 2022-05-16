@@ -1,4 +1,4 @@
-module models.administrations.entities.security.permission;
+module source.models.securities.entities.permission;
 
 @safe:
 import models.administrations;
