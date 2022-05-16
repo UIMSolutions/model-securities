@@ -15,8 +15,8 @@ class DADMSecurityUserRole : DOOPEntity {
         "AssignmentMode": StringAttribute, // 
         "AssignmentStatus": StringAttribute, // 
         "SecurityRole": StringAttribute, // 
-        "UserId": StringAttribute, // 
-        "SecurityRoleIdentifier": StringAttribute, // 
+        "UserId": UUIDAttribute, // 
+        "SecurityRoleId": UUIDAttribute, // 
         "SecurityRoleName": StringAttribute, // 
         "UserLicenseType": StringAttribute, // 
       ])
@@ -27,7 +27,6 @@ mixin(EntityCalls!("ADMSecurityUserRole"));
 
 version(test_library) {
   unittest {
-    assert(APLFeedback);
     assert(ADMSecurityUserRole);
   
   auto entity = ADMSecurityUserRole;

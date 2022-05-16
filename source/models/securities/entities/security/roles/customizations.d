@@ -12,7 +12,7 @@ class DADMSecurityRoleCustomization : DOOPEntity {
 
     this
       .addValues([
-      "identifier": StringAttribute, // 
+      "Id": UUIDAttribute, // 
       "xmlObject": StringAttribute, // 
       "isDisabled": BooleanAttribute, // 
       ])
@@ -23,7 +23,6 @@ mixin(EntityCalls!("ADMSecurityRoleCustomization"));
 
 version(test_library) {
   unittest {
-    assert(APLFeedback);
     assert(ADMSecurityRoleCustomization);
   
   auto entity = ADMSecurityRoleCustomization;

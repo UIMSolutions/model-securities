@@ -15,8 +15,8 @@ class DADMSecurityUserRoleAssociation : DOOPEntity {
         "AssignmentMode": StringAttribute, // 
         "AssignmentStatus": StringAttribute, // 
         "SecurityRole": StringAttribute, // 
-        "UserId": StringAttribute, // 
-        "SecurityRoleId": StringAttribute, // 
+        "UserId": UUIDAttribute, // 
+        "SecurityRoleId": UUIDAttribute, // 
         "SecurityRoleName": StringAttribute, // 
       ])
       .registerPath("admin_securityuserroleassociation");
@@ -26,7 +26,6 @@ mixin(EntityCalls!("ADMSecurityUserRoleAssociation"));
 
 version(test_library) {
   unittest {
-    assert(APLFeedback);
     assert(ADMSecurityUserRoleAssociation);
   
   auto entity = ADMSecurityUserRoleAssociation;

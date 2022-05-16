@@ -12,9 +12,9 @@ class DADMSecurityRoleDuty : DOOPEntity {
 
     this
       .addValues([
-        "securityRoleId": StringAttribute, // 
+        "securityRoleId": UUIDAttribute, // 
         "securityRoleName": StringAttribute, // 
-        "securityDutyId": StringAttribute, // 
+        "securityDutyId": UUIDAttribute, // 
         "securityDutyName": StringAttribute, // 
       ])
       .registerPath("admin_securityroleduties");
@@ -24,7 +24,6 @@ mixin(EntityCalls!("ADMSecurityRoleDuty"));
 
 version(test_library) {
   unittest {
-    assert(APLFeedback);
     assert(ADMSecurityRoleDuty);
   
   auto entity = ADMSecurityRoleDuty;

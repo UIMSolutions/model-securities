@@ -1,29 +1,29 @@
-module models.administrations.entities.security.roles.subrole;
+module source.models.securities.entities.security.duties.customization;
 
 @safe:
 import models.administrations;
 
-// 
-class DUserGroupEntity : DOOPEntity {
-  mixin(EntityThis!("UserGroupEntity"));
+class DSecurityDutyCustomizationsEntity : DOOPEntity {
+  mixin(EntityThis!("SecurityDutyCustomizationsEntity"));
 
   override void initialize() {
     super.initialize;
 
     this
       .addValues([
-        "backingTable_UserGroupInfoRelationshipId": UUIDAttribute, // 
+        "XmlObject": StringAttribute, // 
+        "IsDisabled	": BooleanAttribute, // 
       ])
-      .registerPath("admin_usergroups");
+      .registerPath("security_dutycustomizations");
   }
 }
-mixin(EntityCalls!("UserGroupEntity"));
+mixin(EntityCalls!("SecurityDutyCustomizationsEntity"));
 
 version(test_library) {
   unittest {
-    assert(UserGroupEntity);
+    assert(SecurityDutyCustomizationsEntity);
   
-  auto entity = UserGroupEntity;
+  auto entity = SecurityDutyCustomizationsEntity;
   // auto repository = OOPFileRepository("./tests");
 /*  repository.create("entities", entity.entityClasses, entity.toJson);
 
