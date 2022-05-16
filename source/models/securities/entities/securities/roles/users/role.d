@@ -1,11 +1,11 @@
-module models.administrations.entities.security.roles.duty;
+module models.administrations.entities.security.roles.role;
 
 @safe:
 import models.administrations;
 
 // 
-class DADMSecurityRoleDuty : DOOPEntity {
-  mixin(EntityThis!("ADMSecurityRoleDuty"));
+class DSecurityRoleEntity : DOOPEntity {
+  mixin(EntityThis!("SecurityRoleEntity"));
 
   override void initialize() {
     super.initialize;
@@ -14,19 +14,20 @@ class DADMSecurityRoleDuty : DOOPEntity {
       .addValues([
         "securityRoleId": UUIDAttribute, // 
         "securityRoleName": StringAttribute, // 
-        "securityDutyId": UUIDAttribute, // 
-        "securityDutyName": StringAttribute, // 
+        "accessToSensitiveData": StringAttribute, // 
+        "userLicenseType": StringAttribute, // 
+        "contextString": StringAttribute, // 
       ])
-      .registerPath("admin_securityroleduties");
+      .registerPath("admin_securityroles");
   }
 }
-mixin(EntityCalls!("ADMSecurityRoleDuty"));
+mixin(EntityCalls!("SecurityRoleEntity"));
 
 version(test_library) {
   unittest {
-    assert(ADMSecurityRoleDuty);
+    assert(SecurityRoleEntity);
   
-  auto entity = ADMSecurityRoleDuty;
+  auto entity = SecurityRoleEntity;
   // auto repository = OOPFileRepository("./tests");
 /*  repository.create("entities", entity.entityClasses, entity.toJson);
 

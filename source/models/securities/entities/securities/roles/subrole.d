@@ -4,26 +4,29 @@ module models.administrations.entities.security.roles.subrole;
 import models.administrations;
 
 // 
-class DUserGroupEntity : DOOPEntity {
-  mixin(EntityThis!("UserGroupEntity"));
+class DSecuritySubRoleEntity : DOOPEntity {
+  mixin(EntityThis!("SecuritySubRoleEntity"));
 
   override void initialize() {
     super.initialize;
 
     this
       .addValues([
-        "backingTable_UserGroupInfoRelationshipId": UUIDAttribute, // 
+        "securityRoleId": UUIDAttribute, // 
+        "securityRoleName": StringAttribute, // 
+        "securitySubRoleId": UUIDAttribute, // 
+        "securitySubRoleName": StringAttribute, // 
       ])
-      .registerPath("admin_usergroups");
+      .registerPath("security_subroles");
   }
 }
-mixin(EntityCalls!("UserGroupEntity"));
+mixin(EntityCalls!("SecuritySubRoleEntity"));
 
 version(test_library) {
   unittest {
-    assert(UserGroupEntity);
+    assert(SecuritySubRoleEntity);
   
-  auto entity = UserGroupEntity;
+  auto entity = SecuritySubRoleEntity;
   // auto repository = OOPFileRepository("./tests");
 /*  repository.create("entities", entity.entityClasses, entity.toJson);
 

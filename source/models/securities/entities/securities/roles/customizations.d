@@ -1,29 +1,30 @@
-module source.models.securities.entities.security.duties.customization;
+module models.administrations.entities.security.roles.customization;
 
 @safe:
 import models.administrations;
 
-class DSecurityDutyCustomizationsEntity : DOOPEntity {
-  mixin(EntityThis!("SecurityDutyCustomizationsEntity"));
+// 
+class DSecurityRoleCustomizationEntity : DOOPEntity {
+  mixin(EntityThis!("SecurityRoleCustomizationEntity"));
 
   override void initialize() {
     super.initialize;
 
     this
       .addValues([
-        "XmlObject": StringAttribute, // 
-        "IsDisabled	": BooleanAttribute, // 
+        "xmlObject": StringAttribute, // 
+        "isDisabled": BooleanAttribute, // 
       ])
-      .registerPath("security_dutycustomizations");
+      .registerPath("security_rolecustomizations");
   }
 }
-mixin(EntityCalls!("SecurityDutyCustomizationsEntity"));
+mixin(EntityCalls!("SecurityRoleCustomizationEntity"));
 
 version(test_library) {
   unittest {
-    assert(SecurityDutyCustomizationsEntity);
+    assert(SecurityRoleCustomizationEntity);
   
-  auto entity = SecurityDutyCustomizationsEntity;
+  auto entity = SecurityRoleCustomizationEntity;
   // auto repository = OOPFileRepository("./tests");
 /*  repository.create("entities", entity.entityClasses, entity.toJson);
 
