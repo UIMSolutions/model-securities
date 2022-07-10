@@ -1,1 +1,1 @@
-
+module models.securities.entities;
